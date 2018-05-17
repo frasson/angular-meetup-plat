@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" ng-app="app">
 
 <head>
     <meta charset="UTF-8">
@@ -8,51 +8,26 @@
     <link rel="stylesheet" href="https://cdn.betha.cloud/base/g4/design/2.2.1/css/main.css" type="text/css">
 </head>
 <style>
-html {
-    background-color: white
-}
+    html {
+        background-color: white
+    }
 </style>
 
 <body>
-    <div class="container">
-        <h2>Funcionários</h2>
-        <p>
-            <button id="adicionaFuncionarioBtn" class="btn btn-success btn-sm btn-add" title="Adiciona um funcionário">
-                Funcionário
-            </button>
-        </p>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Telefones</th>
-                    <th width="65"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <a title="Visualizar funcionário">
-                                <i class="fa fa-fw fa-eye"></i>
-                            </a>&nbsp;
-                            <a title="Excluir este funcionário">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+    <div ui-view></div>
+
     <script src="https://cdn.betha.cloud/base/g4/front-end/2.7/js/base.js"></script>
     <script src="https://cdn.betha.cloud/base/g4/design/2.2.1/js/base.js"></script>
     <script src="https://cdn.betha.cloud/base/g4/front-end/2.8/angular/base.js"></script>
     <script src="https://cdn.betha.cloud/user-accounts-ui/v2/user-accounts.js"></script>
+
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+    <script src="listagem-funcionarios-ctrl.js"></script>
+    <script src="telefones.filter.js"></script>
+    <script src="funcionario-cad.ctrl.js"></script>
+    <script src="funcionario.service.js"></script>
 </body>
 
 </html>

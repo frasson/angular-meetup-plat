@@ -1,0 +1,42 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form name="form" novalidate>
+            <div class="modal-header">
+                <button id="closeBtn" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="modal-title">Adicionando funcionário</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <label for="nome" class="required">Nome</label>
+                            <input class="form-control" type="text" id="nome" required ng-model="funcionario.nome">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <label for="cpf" class="required">CPF</label>
+                            <input class="form-control" type="text" id="cpf" required ng-model="funcionario.cpf">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <label for="telefone">Telefone</label>
+                            <input class="form-control" type="text" id="telefone">
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button id="salvarBtn" 
+                        class="btn btn-primary" ng-disabled="form.$invalid" 
+                        ng-click="salvar()" bf-loading="trackers.cadastrando">
+                    Salvar
+                </button>
+                <button id="cancelarBtn" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
