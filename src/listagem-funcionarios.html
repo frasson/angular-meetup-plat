@@ -6,7 +6,8 @@
             Funcionário
         </button>
     </p>
-    <table class="table table-hover" bf-loading="trackers.carregando">
+    <table class="table table-hover" bf-loading="trackers.carregando"
+        data-ng-if="funcionarios.length > 0">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -22,7 +23,7 @@
                 <td>{{::funcionario.telefones | telefones}}</td>
                 <td class="text-center">
                     <div class="btn-group">
-                        <a title="Visualizar funcionário">
+                        <a title="Editar funcionário" data-ng-click="editar(fundionario)">
                             <i class="fa fa-fw fa-eye"></i>
                         </a>&nbsp;
                         <a title="Excluir este funcionário">
@@ -33,4 +34,7 @@
             </tr>
         </tbody>
     </table>
+    <div data-ng-if="trackers.carregando.active() && funcionarios.length === 0">
+        <h1 class="text-center">Ainda não há registros por aqui.</h1>
+    </div>
 </div>

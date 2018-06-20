@@ -1,14 +1,12 @@
 angular.module('app')
-    .service('FuncionarioService', function($http){
-
-        var url = "http://crud-api.cloud.betha.com.br/api/funcionarios";
+    .service('FuncionarioService', function($http, urlAPI){
 
         this.buscar = function () {
-            return $http.get(url);
+            return $http.get(urlAPI);
         };
 
         this.cadastrar = function (funcionario) {
-            return $http.post(url, funcionario);
+            return $http.post(urlAPI, funcionario);
         };
         
     });

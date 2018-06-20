@@ -15,11 +15,22 @@ angular.module('app')
         });        
 
         $scope.adicionar = function(){
+            abrirModal();
+        };
+
+        $scope.editar = function(funcionario){
+            abrirModal(funcionario);
+        };        
+
+        function abrirModal (funcionario) {
             dialog.open({
                 templateUrl: 'funcionario-cad.html',
-                controller: 'CadastroFuncionarioCtrl'
+                controller: 'CadastroFuncionarioCtrl',
+                resolve: {
+                    funcionario: funcionario
+                }
             });
-        };        
+        }
 
         function carregarFuncionarios() {
             //faz uma chamada ajax para buscar os funcionarios que estao nessa api
